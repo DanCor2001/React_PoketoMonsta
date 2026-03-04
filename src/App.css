@@ -1,0 +1,85 @@
+:root {
+  --poke-red: #ff1c1c;
+  --poke-blue: #3b4cca;
+  --poke-yellow: #ffde00;
+  --poke-gold: #b3a125;
+  --card-bg: #ffffff;
+  --bg-pokedex: #f0f0f0;
+}
+div {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: var(--poke-red);
+  text-align: center;
+  font-size: 3em;
+  text-shadow: 3px 3px 0px var(--poke-blue),
+              -1px -1px 0px var(--poke-yellow);
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+h2 {
+  color: #fdfdfd;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 300;
+  margin-top: 0;
+  border-bottom: 2px solid var(--poke-gold);
+  display: table;
+  margin: 0 auto 30px auto;
+  padding-bottom: 5px;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  list-style: none;
+}
+li {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+li:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  border-color: var(--poke-blue);
+}
+li h3 {
+  background: var(--poke-blue);
+  color: white;
+  margin: -20px -20px 15px -20px;
+  padding: 10px;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+li img {
+  filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.05));
+  transition: transform 0.3s ease;
+}
+li:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+div > p {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.5em;
+  color: #888;
+  margin-top: 50px;
+  animation: flicker 2s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

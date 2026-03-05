@@ -6,7 +6,7 @@ interface DPokemons{
     PName: string;
     PSprite: string;}
 function App() {
-    const [error, setError] = useState<string | null>(null)
+    const [error1, setError] = useState<string | null>(null)
     const [listPokemon, setlistPokemon] = useState<DPokemons[]>([]);
     useEffect(()=> {
         const loadPokemon = async (num: number) => {
@@ -23,7 +23,7 @@ function App() {
             }
             setlistPokemon(temporaryList);
         }
-        catch (error) {setError(error)}
+        catch (error) {setError(error1)}
         finally {console.log('finally');}}
         loadPokemon(151)}, [])
     console.log(`Lista:`,listPokemon)

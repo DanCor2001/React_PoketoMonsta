@@ -8,9 +8,6 @@ interface DPokemons{
 function App() {
     const [error, setError] = useState<string | null>(null)
     const [listPokemon, setlistPokemon] = useState<DPokemons[]>([]);
-    const addPokemon = (PID: string, PName: string, PSprite: string) => {
-        const newPokemon: DPokemons = {PID,PName,PSprite};
-        setlistPokemon([...listPokemon, newPokemon]);}
     useEffect(()=> {
         const loadPokemon = async (num: number) => {
         // llamado a la url que tarde, metodo GET
@@ -33,9 +30,9 @@ function App() {
     return(
         <>
         <div>
-            <table>
-            <tr><h1>ポケットモンスタ!</h1></tr>
-            <h2>KANTO REGIONAL POKEDEX</h2>
+            <table><thead><tr><td><h1>ポケットモンスタ!</h1></td></tr>
+            <tr><td><h2>KANTO REGIONAL POKEDEX</h2></td></tr></thead>
+            <tbody><tr><td>
             {listPokemon.length === 0 ? (
             //En inglés para agregarle dramatismo, saludos profe.
             <p>There aren't pokemons available.</p>
@@ -52,7 +49,7 @@ function App() {
                 ))}
             </ul>
             )}
-            </table>
+            </td></tr></tbody></table>
         </div>.
         </>
     )
